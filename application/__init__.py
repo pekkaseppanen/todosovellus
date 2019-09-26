@@ -1,23 +1,24 @@
-# Tuodaan Flask käyttöön
+# Tuodaan Flask kaytt00n
 from flask import Flask
 app = Flask(__name__)
 
-# Tuodaan SQLAlchemy käyttöön
+# Tuodaan SQLAlchemy kayttoon
 from flask_sqlalchemy import SQLAlchemy
-# Käytetään tasks.db-nimistä SQLite-tietokantaa. Kolme vinoviivaa
-# kertoo, tiedosto sijaitsee tämän sovelluksen tiedostojen kanssa
+# Kaytetaan tasks.db-nimista SQLite-tietokantaa. Kolme vinoviivaa
+# kertoo, tiedosto sijaitsee taman sovelluksen tiedostojen kanssa
 # samassa paikassa
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///tasks.db"
-# Pyydetään SQLAlchemyä tulostamaan kaikki SQL-kyselyt
+# Pyydetaan SQLAlchemya tulostamaan kaikki SQL-kyselyt
 app.config["SQLALCHEMY_ECHO"] = True
 
-# Luodaan db-olio, jota käytetään tietokannan käsittelyyn
+# Luodaan db-olio, jota kaytetaan tietokannan kasittelyyn
 db = SQLAlchemy(app)
 
-# Luetaan kansiosta application tiedoston views sisältö
+# Luetaan kansiosta application tiedoston views sisalto
 from application import views
 
 from application.tasks import models
+
 from application.tasks import views
 
 # Luodaan lopulta tarvittavat tietokantataulut
